@@ -20,18 +20,48 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/departments">Departments</a>
+          <a class="nav-link" href="/department">Dipartimenti</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Degrees</a>
+          <a class="nav-link" href="#">Corsi</a>
         </li>
        </ul>
     </div>
   </div>
 </nav>
+
+
+<!-- aggiungo lista dipartimenti-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Indirizzo</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Sito web</th>      
+      <th scope="col">Capo dipartimento</th>
+
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr th:each="ld : ${listaDipartimenti}">
+      	<td th:text="${ld.name}"></td>
+		<td th:text="${ld.address}"></td>
+     	<td th:text="${ld.phone}"></td>
+     	<td th:text="${ld.email}"></td>
+     	<td th:text="${ld.website}"></td>
+ 		<td th:text="${ld.headOfDepartments}"></td>
+
+
+
+    </tr>
+   
+  </tbody>
+</table>
   
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

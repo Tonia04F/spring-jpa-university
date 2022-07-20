@@ -19,7 +19,7 @@ public class Department {
 	private String phone;
 	private String email;
 	private String website;
-	private String headOfDepartments;
+	private String headOfDepartment;
 	public Integer getId() {
 		return id;
 	}
@@ -57,10 +57,10 @@ public class Department {
 		this.website = website;
 	}
 	public String getHeadOfDepartments() {
-		return headOfDepartments;
+		return headOfDepartment;
 	}
 	public void setHeadOfDepartments(String headOfDepartments) {
-		this.headOfDepartments = headOfDepartments;
+		this.headOfDepartment = headOfDepartments;
 	}
 	
 	
