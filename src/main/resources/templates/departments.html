@@ -1,40 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+       <div th:block th:replace="fragments :: src-head"></div>
 
     <title>Universita di Napoli</title>
   </head>
     <body>
     
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Università di Napoli</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/department">Dipartimenti</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Corsi</a>
-        </li>
-       </ul>
-    </div>
-  </div>
-</nav>
-
+    <!-- fragment navbar-->
+	<th:block th:replace="fragments :: navbar(departments)"></th:block>
+<div class="container">
 
 <!-- aggiungo lista dipartimenti-->
+<h1 th:if="${listaDipartimenti.size() > 0}" class="mx-auto w-50">Informazioni sui dipartimenti</h1>
 <table class="table">
   <thead>
     <tr>
@@ -49,6 +27,9 @@
   
   <tbody>
     <tr th:each="ld : ${listaDipartimenti}">
+    	 <td class="bg-success">
+	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/dettagli/${ld.Id}|}" th:text="${ld.getName()}"></a>
+	      </td>
       	<td th:text="${ld.name}"></td>
 		<td th:text="${ld.address}"></td>
      	<td th:text="${ld.phone}"></td>
@@ -62,7 +43,8 @@
    
   </tbody>
 </table>
-  
+      <h3 class="mx-auto w-50" th:if="${listaDipartimenti.size() == 0}">Nessun dipartimento trovato</h3>
+</div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -1,0 +1,51 @@
+!doctype html>
+<html lang="en">
+  <head>
+       <div th:block th:replace="fragments :: src-head"></div>
+
+    <title>Universita di Napoli</title>
+  </head>
+    <body>
+    
+ <!-- fragment navbar-->
+	<th:block th:replace="fragments :: navbar(departments)"></th:block>
+<h1 class="mx-auto w-50">I nostri corsi di laurea</h1>
+
+	 <div th:if="${#lists.isEmpty(degreeslist)}">
+        <h1>Spiacenti, non è disponibile una lista di corsi</h1>>
+      </div>
+      <div th:unless="${#lists.isEmpty(degreeslist)}">
+
+
+<hr/>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Dipartimento</th>				
+					<th>Corso</th>
+					<th>Livello</th>
+					<th>Indirizzo</th>
+					<th>Email</th>
+					<th>Sitoweb</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dl : ${degreeslist}">
+				    <td th:text="${dl.getDepartment.getName()}"></td>
+					<td th:text="${dl.name}"></td>					
+					<td th:text="${dl.level}"></td>					
+					<td th:text="${dl.address}"></td>					
+					<td th:text="${dl.email}"></td>				
+					<td th:text="${dl.website}"></td>
+				</tr>
+			</tbody>
+		</table>
+</html>		
+		
+		  
+		   
+		   
+		   
+		
+    </body>
+</html>

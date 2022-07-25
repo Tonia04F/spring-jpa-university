@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+       <div th:block th:replace="fragments :: src-head"></div>
+
+    <title>I nostri dipartimenti</title>
+  </head>
+    <body>
+    
+    <!-- fragment navbar-->
+	<th:block th:replace="fragments :: navbar(departments)"></th:block>
+	
+
+	<!-- inizio tabella per mostrare i dettagli del dipartimento scelto -->
+	<div class="container">
+ 		<hr/>
+      <div th:if="${#lists.isEmpty(department.degrees)}">
+        <h1>Spiacenti, non è disponibile una lista di corsi di Laurea per questo dipartimento</h1>>
+      </div>
+    <div th:unless="${#lists.isEmpty(department.degrees)}">
+			<h1 th:text="${departmentId.name}"></h1> <!-- il region qua dentro, come al solito, deve corrispondere alla chiave nel controller, metto il punto per accedere a un parametro-->
+       <h3>I nostri corsi</h3>
+	  <span th:text="${dipartimentoId.corsi.size()}"></span>	
+		<ul>
+		
+		
+			<li th:each="currentDipartment : ${departmentId.corsi}" th:text="${currentDipartment.name}"></li>
+		</ul>
+	</div>
+	
+    </body>
+</html>
