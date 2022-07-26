@@ -26,5 +26,7 @@ public class TeacherController {
 		model.addAttribute("tList", insegnanti);
 		return "teachers";
 	}
+	
+	
 
 }

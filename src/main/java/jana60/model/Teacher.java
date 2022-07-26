@@ -25,6 +25,8 @@ public class Teacher {
 	private String officeAddress;
 	private String officeNumber;
 	
+	//join column insegnanti e corsi
+	
 
 	
 	public Integer getTeachersId() {
