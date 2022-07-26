@@ -12,20 +12,31 @@
 	
 
 	<!-- inizio tabella per mostrare i dettagli del dipartimento scelto -->
+	<h1 class="text-center" th:text="${department.name}"></h1> 
+	<hr/>
+	
 	<div class="container">
- 		<hr/>
-      <div th:if="${#lists.isEmpty(department.degrees)}">
-        <h1>Spiacenti, non è disponibile una lista di corsi di Laurea per questo dipartimento</h1>>
-      </div>
-    <div th:unless="${#lists.isEmpty(department.degrees)}">
-			<h1 th:text="${departmentId.name}"></h1> <!-- il region qua dentro, come al solito, deve corrispondere alla chiave nel controller, metto il punto per accedere a un parametro-->
-       <h3>I nostri corsi</h3>
-	  <span th:text="${dipartimentoId.corsi.size()}"></span>	
-		<ul>
-		
-		
-			<li th:each="currentDipartment : ${departmentId.corsi}" th:text="${currentDipartment.name}"></li>
-		</ul>
+		<h3 class="text-center">Corsi di Laurea:</h3>
+		 <table class="table my-3">
+	          <thead>
+	            <tr>
+	              <th>Nome</th>
+	              <th>Tipologia</th>
+	              <th>Indirizzo</th>
+	              <th>E-Mail</th>
+	              <th>Sito Web</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr class="align-middle" th:each="d : ${department.degrees}">
+	              <td class="bg-success text-light" th:text="${d.name}"></td>
+	              <td class="bg-secondary text-light" th:text="${d.level}"></td>
+	              <td th:text="${d.address}"></td>
+	              <td th:text="${d.email}"></td>
+	              <td th:text="${d.website}"></td>
+	            </tr>
+	          </tbody>
+	      </table>
 	</div>
 	
     </body>

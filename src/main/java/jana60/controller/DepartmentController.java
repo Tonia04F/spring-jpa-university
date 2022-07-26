@@ -31,8 +31,8 @@ public class DepartmentController {
 	}
 	
 	//creo metodo che mostra i dettagli di ogni dipartimento
-	@GetMapping("/dettagli/{departmentId}")
-	  public String departmentDetail(@PathVariable(name = "id") Integer departmentId, Model model) {
+	@GetMapping("/dettagli/{id}")
+	  public String departmentDetail(@PathVariable("id") Integer departmentId, Model model) {
 	    Department dett = repo.findById(departmentId).get();
 	    model.addAttribute("department", dett);
 	   return"/departmentDetails";

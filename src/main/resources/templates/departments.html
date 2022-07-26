@@ -28,7 +28,7 @@
   <tbody>
     <tr th:each="ld : ${listaDipartimenti}">
     	 <td class="bg-success">
-	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/dettagli/${ld.Id}|}" th:text="${ld.getName()}"></a>
+	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/department/dettagli/${ld.Id}|}" th:text="${ld.getName()}"></a>
 	      </td>
       	<td th:text="${ld.name}"></td>
 		<td th:text="${ld.address}"></td>

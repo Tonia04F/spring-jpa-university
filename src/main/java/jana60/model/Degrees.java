@@ -18,6 +18,15 @@ public class Degrees {
 	
 	private String name;
 	private String level;
+	private String address;
+	private String email;
+	private String website;
+	
+	@ManyToOne
+	@JoinColumn(name="departmentId")
+	private Department departments;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -42,12 +51,12 @@ public class Degrees {
 		this.level = level;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String adress) {
+		this.address = adress;
 	}
 
 	public String getEmail() {
@@ -74,13 +83,6 @@ public class Degrees {
 		this.departments = departments;
 	}
 
-	private String adress;
-	private String email;
-	private String website;
-	
-	@ManyToOne
-	@JoinColumn(name="departmentId")
-	private Department departments;
 	
 	
 	
