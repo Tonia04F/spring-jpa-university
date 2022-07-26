@@ -16,7 +16,7 @@
 	<hr/>
 	
 	<div class="container">
-		<h3 class="text-center">Corsi di Laurea:</h3>
+		<h3 class="text-center">Dettagli dipartimento</h3>
 		 <table class="table my-3">
 	          <thead>
 	            <tr>
@@ -29,8 +29,8 @@
 	          </thead>
 	          <tbody>
 	            <tr class="align-middle" th:each="d : ${department.degrees}">
-	              <td class="bg-success text-light" th:text="${d.name}"></td>
-	              <td class="bg-secondary text-light" th:text="${d.level}"></td>
+	              <td class="bg-info text-light" th:text="${d.name}"></td>
+	              <td th:text="${d.level}"></td>
 	              <td th:text="${d.address}"></td>
 	              <td th:text="${d.email}"></td>
 	              <td th:text="${d.website}"></td>

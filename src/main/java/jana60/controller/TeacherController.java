@@ -14,17 +14,17 @@ import jana60.model.Teacher;
 import jana60.repository.TeacherRepository;
 
 @Controller
-@RequestMapping("/teachers")
+@RequestMapping("/")
 public class TeacherController {
 	
 	@Autowired
 	private TeacherRepository repo;
 	
-	@GetMapping
+	@GetMapping("/teachers")
 	private String teachers(Model model) {
 		List<Teacher> insegnanti = (List<Teacher>)repo.findAll();
 		model.addAttribute("tList", insegnanti);
-		return "insegnanti";
+		return "teachers";
 	}
 
 }

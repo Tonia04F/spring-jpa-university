@@ -22,7 +22,7 @@ public class Teacher {
 	private String surname;
 	private String phone;
 	private String email;
-	private String officeAdress;
+	private String officeAddress;
 	private String officeNumber;
 	
 
@@ -58,10 +58,10 @@ public class Teacher {
 		this.email = email;
 	}
 	public String getOfficeAdress() {
-		return officeAdress;
+		return officeAddress;
 	}
 	public void setOfficeAdress(String officeAdress) {
-		this.officeAdress = officeAdress;
+		this.officeAddress = officeAdress;
 	}
 	public String getOfficeNumber() {
 		return officeNumber;

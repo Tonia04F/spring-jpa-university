@@ -15,6 +15,7 @@
   
   <h1>I nostri insegnanti</h1>
   
+  
   <div class="container">
   
   <table class="table">
@@ -32,9 +33,9 @@
   <tbody>
     <tr th:each="tl : ${tList}">
     	 <td class="bg-success">
-	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/teachers/${tl.Id}|}" th:text="${tl.getName()}"></a>
+	              		<a class="text-decoration-none fw-bold text-light" th:href="@{|/teachers/${tlId}|}" th:text="${tl.getName()}"></a>
 	      </td>
-      	<td th:text="${tl.name}"></td>
+      	
 		<td th:text="${tl.surname}"></td>
      	<td th:text="${tl.phone}"></td>
      	<td th:text="${tl.email}"></td>
